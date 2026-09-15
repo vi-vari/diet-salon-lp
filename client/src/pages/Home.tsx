@@ -5,7 +5,7 @@ import React from "react";
 // Layout: Single column LP, max-width 700px centered
 
 const LINE_HREF = "https://line.me/R/ti/p/@798ddeqo";
-const HOTPEPPER_HREF = "https://beauty.hotpepper.jp/kr/slnH000616454/";
+const HOTPEPPER_HREF = "https://beauty.hotpepper.jp/CSP/kr/reserve/?storeId=H000616454&couponId=CP00000011986021&add=0";
 
 // GitHub Pages対応: BASE_URLを使って動的にアセットパスを解決する
 const base = import.meta.env.BASE_URL.replace(/\/$/, "");
