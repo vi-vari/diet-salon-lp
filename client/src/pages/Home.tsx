@@ -11,26 +11,62 @@ const HOTPEPPER_HREF = "https://beauty.hotpepper.jp/CSP/kr/reserve/?storeId=H000
 const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 const asset = (path: string) => `${base}${path}`;
 
+// CTAボタン左の金色矢印。点滅アニメーションは index.css の .cta-arrow に定義。
+function CtaArrow() {
+  return (
+    <svg
+      className="cta-arrow shrink-0 w-[7.2%] min-w-[26px] h-auto aspect-[55/59] drop-shadow-[1px_2px_1px_rgba(0,0,0,0.15)]"
+      viewBox="0 0 55 59"
+      aria-hidden="true"
+      focusable="false"
+    >
+      <defs>
+        <linearGradient id="cta-arrow-gold" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stopColor="#FFDC1D" />
+          <stop offset="100%" stopColor="#FFBD1C" />
+        </linearGradient>
+      </defs>
+      <path d="M4 13 H32 V5 L53 29.5 L32 54 V46 H4 Z" fill="url(#cta-arrow-gold)" />
+    </svg>
+  );
+}
+
 function CTABlock() {
   return (
     <div className="flex flex-col items-center gap-3 w-full py-8">
-      <a
-        href={LINE_HREF}
-        className="flex items-center justify-center gap-2 rounded-[3px] hover:opacity-90 transition-opacity"
-        style={{ width: "321px", height: "49px", backgroundColor: "#4dce6e" }}
-      >
-        <i className="fab fa-line text-white text-2xl"></i>
-        <span className="text-white text-xl font-semibold">LINE講座をスタート</span>
-      </a>
+      <div className="w-full max-w-[700px] flex items-center gap-[1.2%]">
+        <CtaArrow />
+        <a
+          href={LINE_HREF}
+          className="flex-1 min-w-0 block hover:brightness-[1.04] active:brightness-95 transition"
+          style={{ textDecoration: "none" }}
+        >
+          <img
+            src={asset("/assets/cta-line.webp")}
+            alt="LINE登録者限定 LINE講座をスタート"
+            width={850}
+            height={180}
+            className="block w-full h-auto"
+          />
+        </a>
+      </div>
       <p className="text-[#3a3a3a] text-[15px] text-center">1週間で痩せ体質を作る無料講座をプレゼント中🎁</p>
-      <a
-        href={HOTPEPPER_HREF}
-        className="flex items-center justify-center gap-2 rounded-[3px] hover:opacity-90 transition-opacity"
-        style={{ width: "321px", height: "49px", backgroundColor: "#bf1391" }}
-      >
-        <i className="fas fa-calendar text-white text-2xl"></i>
-        <span className="text-white text-xl font-semibold">ホットペッパーで予約する</span>
-      </a>
+      <div className="w-full max-w-[700px] flex items-center gap-[1.2%]">
+        <CtaArrow />
+        <a
+          href={HOTPEPPER_HREF}
+          className="flex-1 min-w-0 block hover:brightness-[1.04] active:brightness-95 transition"
+          style={{ textDecoration: "none" }}
+        >
+          <img
+            src={asset("/assets/cta-hotpepper.webp")}
+            alt="ホットペッパーで予約する"
+            width={741}
+            height={152}
+            className="block w-full h-auto"
+          />
+        </a>
+      </div>
       <p className="text-[#3a3a3a] text-sm text-center">今すぐ予約したい方はこちらからどうぞ</p>
       <p className="text-[#3a3a3a] text-sm text-center">ダイエットカウンセリングが初回限定500円🎉</p>
     </div>
