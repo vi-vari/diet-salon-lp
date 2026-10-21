@@ -34,7 +34,7 @@ function CtaArrow() {
 function CTABlock() {
   return (
     <div className="flex flex-col items-center gap-3 w-full py-8">
-      <div className="w-full max-w-[700px] flex items-center gap-[1.2%]">
+      <div className="w-full min-[700px]:w-[calc(100%+2rem)] min-[700px]:-mx-4 max-w-[700px] pl-[4px] flex items-center gap-[1.2%]">
         <CtaArrow />
         <a
           href={LINE_HREF}
@@ -51,7 +51,7 @@ function CTABlock() {
         </a>
       </div>
       <p className="text-[#3a3a3a] text-[15px] text-center">1週間で痩せ体質を作る無料講座をプレゼント中🎁</p>
-      <div className="w-full max-w-[700px] flex items-center gap-[1.2%]">
+      <div className="w-full min-[700px]:w-[calc(100%+2rem)] min-[700px]:-mx-4 max-w-[700px] pl-[4px] flex items-center gap-[1.2%]">
         <CtaArrow />
         <a
           href={HOTPEPPER_HREF}
